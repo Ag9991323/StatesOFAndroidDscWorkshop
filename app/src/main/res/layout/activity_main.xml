@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+   <EditText
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:hint="Enter any number"
+       android:id="@+id/et1"
+       android:layout_centerHorizontal="true"
+       android:inputType="number"
+       android:layout_marginTop="20dp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn1"
+        android:layout_toRightOf="@id/et1"
+        android:layout_marginLeft="5dp"
+        android:text="clickme"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/lv1"
+        android:layout_below="@id/et1"
+        android:layout_marginTop="25dp"></ListView>
+
+
+</RelativeLayout>
