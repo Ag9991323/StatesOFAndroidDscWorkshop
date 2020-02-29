@@ -1,50 +1,86 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ListView;
-
-import java.util.ArrayList;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-   EditText et1;
+
    Button btn1;
-   ListView lv1;
-   ArrayList< Integer> arrayList;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        et1  = findViewById(R.id.et1);
-        btn1= findViewById(R.id.btn1);
-        lv1= findViewById(R.id.lv1);
-        arrayList = new ArrayList<>();
+
+        btn1 = findViewById(R.id.btn1);
+
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int num = Integer.parseInt(et1.getText().toString());
-
-                for(int i=1;i<=10;i++){
-                    arrayList.add(i*num);
-                }
-                ArrayAdapter<Integer > adapter = new ArrayAdapter<Integer>(getApplicationContext(),R.layout.support_simple_spinner_dropdown_item,arrayList);
-                lv1.setAdapter(adapter);
+                Intent i = new Intent(MainActivity.this,Main2Activity.class);
+                startActivity(i);
 
 
             }
         });
 
-
-
-
+        Log.d("error1","I am in on app1 create");
+        Toast.makeText(getApplicationContext()," OnCreate",Toast.LENGTH_SHORT).show();
     }
+        @Override
+        protected void onRestart() {
+            super.onRestart();
+            Log.d("error1","I am in on app1 restart");
+            Toast.makeText(getApplicationContext()," Onrestart",Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        protected void onStart() {
+            super.onStart();
+            Log.d("error1","I am in  app1 on start");
+            Toast.makeText(getApplicationContext()," Onstart",Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        protected void onDestroy() {
+            super.onDestroy();
+            Log.d("error1","I am in  app1 on destroy");
+            Toast.makeText(getApplicationContext()," Ondestroy",Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        protected void onPause() {
+            super.onPause();
+            Log.d("error1","I am in app1  on pause");
+            Toast.makeText(getApplicationContext()," Onpause",Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        protected void onStop() {
+            super.onStop();
+            Log.d("error1","I am in on app1 on stop");
+            Toast.makeText(getApplicationContext()," Onstop",Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        protected void onResume() {
+            super.onResume();
+            Log.d("error1","I am in on  app1 resume");
+            Toast.makeText(getApplicationContext()," OnResume",Toast.LENGTH_SHORT).show();
+        }
+
+
+
+
+
 
 
 }
